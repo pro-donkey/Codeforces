@@ -1,0 +1,1 @@
+{"name":"Local: 2094-D","url":"d:\\Programming\\CP\\Codeforces\\2094-D.py","tests":[{"id":1768740721556,"input":"1\nLLRLRLRRL\nLLLRLRRLLRRRL","output":"YES"},{"id":1768741969951,"input":"1\nLLRRL\nLLLLRRLL","output":"YES"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programming\\CP\\Codeforces\\2094-D.py","group":"local","local":true}

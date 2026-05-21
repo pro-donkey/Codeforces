@@ -1,0 +1,1 @@
+{"name":"Local: 1353-C","url":"d:\\Programming\\CP\\Codeforces\\1353-C.py","tests":[{"id":1767822300548,"input":"3\n1\n5\n499993\n","output":"0\n40\n41664916690999888\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programming\\CP\\Codeforces\\1353-C.py","group":"local","local":true}

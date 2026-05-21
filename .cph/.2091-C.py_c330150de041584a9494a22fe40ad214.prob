@@ -1,0 +1,1 @@
+{"name":"Local: 2091-C","url":"d:\\Programming\\CP\\Codeforces\\2091-C.py","tests":[{"id":1761316005230,"input":"3\n4\n5\n3\n","output":"-1\n2 4 1 3 5\n2 1 3\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programming\\CP\\Codeforces\\2091-C.py","group":"local","local":true}

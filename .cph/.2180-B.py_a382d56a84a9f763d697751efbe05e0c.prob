@@ -1,0 +1,1 @@
+{"name":"Local: 2180-B","url":"d:\\Programming\\CP\\Codeforces\\2180-B.py","tests":[{"id":1767218582677,"input":"3\n4\namir rima amin nima\n1\ncodeforces\n3\na ab abc\n","output":"aminamirrimanima\ncodeforces\naababc\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programming\\CP\\Codeforces\\2180-B.py","group":"local","local":true}

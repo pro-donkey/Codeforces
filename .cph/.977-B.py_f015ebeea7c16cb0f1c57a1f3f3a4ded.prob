@@ -1,0 +1,1 @@
+{"name":"Local: 977-B","url":"d:\\Programming\\CP\\Codeforces\\977-B.py","tests":[{"id":1750357340494,"input":"7\nABACABA\n","output":"AB\n"},{"id":1750357345523,"input":"5\nZZZAA\n","output":"ZZ\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programming\\CP\\Codeforces\\977-B.py","group":"local","local":true}
