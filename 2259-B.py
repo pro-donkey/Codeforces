@@ -66,7 +66,6 @@ sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 input = lambda: sys.stdin.readline().rstrip('\r\n')
 
 
-
 def I():
     return input()
 
@@ -95,34 +94,28 @@ def LGMI():
     return list(map(lambda x: int(x) - 1, input().split()))
 
 
-def range_mod_sum(d, L, R):
-    """Sum of d % m for m in [L, R], with L >= 1."""
-    total = 0
-
-    # Part 1: m > d, so d % m == d
-    lo = max(L, d + 1)
-    if lo <= R:
-        total += (R - lo + 1) * d
-
-    # Part 2: m <= d, walk quotient blocks
-    hi = min(R, d)
-    l = L
-    while l <= hi:
-        q = d // l
-        r = min(d // q, hi)            # last m with the same quotient
-        cnt = r - l + 1
-        total += cnt * d - q * ((l + r) * cnt // 2)
-        l = r + 1
-    return total
-
 def solve():
-    x, y, k = MI()
-    if y < x:
-        print(k * y + k * (k - 1) // 2)
-    else:
-        d = y - x
-        print(range_mod_sum(d, x, x + k - 1))
+    n = II() 
+    arr = LII()
+    odd = 0
+    even = []
+    for val in arr:
+        if val % 2 == 1:
+            odd += 1
+        else:
+            even.append(val)
 
+    if len(even) <= odd:
+        print(odd)
+    else:
+        cnt1, cnt2 = 0, 0
+        for val in even:
+            if val % 4 == 0:
+                cnt1 += 1
+            else:
+                cnt2 += 1
+
+        print(max(cnt1,cnt2,odd))
 
 
 t = II()

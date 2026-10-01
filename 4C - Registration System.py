@@ -1,7 +1,20 @@
-'''
-This is not just code; it's war. Against Myself!
+
+
+
+
+
+
 '''
 
+
+Author :  - Success is not final, failure is not fatal: It is the courage to continue that counts++, 
+  Stay focused, stay hungry, and keep coding. Success is just one algorithm away!.
+
+
+
+
+
+'''
 import random
 import sys
 import os
@@ -14,19 +27,15 @@ from io import BytesIO, IOBase
 from copy import deepcopy
 import threading
 import bisect
-
 BUFSIZE = 4096
-
 
 class FastIO(IOBase):
     newlines = 0
-
     def __init__(self, file):
         self._fd = file.fileno()
         self.buffer = BytesIO()
         self.writable = 'x' in file.mode or 'r' not in file.mode
         self.write = self.buffer.write if self.writable else None
-
     def read(self):
         while True:
             b = os.read(self._fd, max(os.fstat(self._fd).st_size, BUFSIZE))
@@ -36,7 +45,6 @@ class FastIO(IOBase):
             self.buffer.seek(0, 2), self.buffer.write(b), self.buffer.seek(ptr)
         self.newlines = 0
         return self.buffer.read()
-
     def readline(self):
         while self.newlines == 0:
             b = os.read(self._fd, max(os.fstat(self._fd).st_size, BUFSIZE))
@@ -45,12 +53,10 @@ class FastIO(IOBase):
             self.buffer.seek(0, 2), self.buffer.write(b), self.buffer.seek(ptr)
         self.newlines -= 1
         return self.buffer.readline()
-
     def flush(self):
         if self.writable:
             os.write(self._fd, self.buffer.getvalue())
             self.buffer.truncate(0), self.buffer.seek(0)
-
 
 class IOWrapper(IOBase):
     def __init__(self, file):
@@ -61,70 +67,41 @@ class IOWrapper(IOBase):
         self.read = lambda: self.buffer.read().decode('ascii')
         self.readline = lambda: self.buffer.readline().decode('ascii')
 
-
 sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 input = lambda: sys.stdin.readline().rstrip('\r\n')
-
-
 
 def I():
     return input()
 
-
 def II():
     return int(input())
-
 
 def MI():
     return map(int, input().split())
 
-
 def LI():
     return list(input().split())
-
 
 def LII():
     return list(map(int, input().split()))
 
-
 def GMI():
     return map(lambda x: int(x) - 1, input().split())
-
 
 def LGMI():
     return list(map(lambda x: int(x) - 1, input().split()))
 
-
-def range_mod_sum(d, L, R):
-    """Sum of d % m for m in [L, R], with L >= 1."""
-    total = 0
-
-    # Part 1: m > d, so d % m == d
-    lo = max(L, d + 1)
-    if lo <= R:
-        total += (R - lo + 1) * d
-
-    # Part 2: m <= d, walk quotient blocks
-    hi = min(R, d)
-    l = L
-    while l <= hi:
-        q = d // l
-        r = min(d // q, hi)            # last m with the same quotient
-        cnt = r - l + 1
-        total += cnt * d - q * ((l + r) * cnt // 2)
-        l = r + 1
-    return total
-
-def solve():
-    x, y, k = MI()
-    if y < x:
-        print(k * y + k * (k - 1) // 2)
-    else:
-        d = y - x
-        print(range_mod_sum(d, x, x + k - 1))
-
-
-
 t = II()
+arr = []
 for _ in range(t):
-    solve()
+    s = I()
+    arr.append(s)
+    
+mp = {}
+for i in arr:
+    if i in mp:
+        print(i+str(mp[i]))
+        mp[i] += 1
+    else :
+        mp[i] = 1
+        print('OK')

@@ -1,45 +1,34 @@
-'''
-This is not just code; it's war. Against Myself!
-'''
-
-import random
 import sys
 import os
 import math
+import random
 from collections import Counter, defaultdict, deque
 from functools import lru_cache, reduce
 from itertools import accumulate, combinations, permutations
 from heapq import nsmallest, nlargest, heapify, heappop, heappush
-from io import BytesIO, IOBase
-from copy import deepcopy
-import threading
 import bisect
+from io import BytesIO
+BUFSIZE = 8192  
 
-BUFSIZE = 4096
-
-
-class FastIO(IOBase):
-    newlines = 0
-
+class FastIO:
     def __init__(self, file):
         self._fd = file.fileno()
         self.buffer = BytesIO()
-        self.writable = 'x' in file.mode or 'r' not in file.mode
+        self.newlines = 0  # Initialize the `newlines` attribute
+        self.writable = "x" in file.mode or "r" not in file.mode
         self.write = self.buffer.write if self.writable else None
 
     def read(self):
         while True:
-            b = os.read(self._fd, max(os.fstat(self._fd).st_size, BUFSIZE))
+            b = os.read(self._fd, BUFSIZE)
             if not b:
                 break
-            ptr = self.buffer.tell()
-            self.buffer.seek(0, 2), self.buffer.write(b), self.buffer.seek(ptr)
-        self.newlines = 0
+            self.buffer.seek(0, 2), self.buffer.write(b), self.buffer.seek(0)
         return self.buffer.read()
 
     def readline(self):
         while self.newlines == 0:
-            b = os.read(self._fd, max(os.fstat(self._fd).st_size, BUFSIZE))
+            b = os.read(self._fd, BUFSIZE)
             self.newlines = b.count(b"\n") + (not b)
             ptr = self.buffer.tell()
             self.buffer.seek(0, 2), self.buffer.write(b), self.buffer.seek(ptr)
@@ -52,60 +41,66 @@ class FastIO(IOBase):
             self.buffer.truncate(0), self.buffer.seek(0)
 
 
-class IOWrapper(IOBase):
+class IOWrapper:
     def __init__(self, file):
         self.buffer = FastIO(file)
         self.flush = self.buffer.flush
         self.writable = self.buffer.writable
-        self.write = lambda s: self.buffer.write(s.encode('ascii'))
-        self.read = lambda: self.buffer.read().decode('ascii')
-        self.readline = lambda: self.buffer.readline().decode('ascii')
+        self.write = lambda s: self.buffer.write(s.encode("ascii"))
+        self.read = lambda: self.buffer.read().decode("ascii")
+        self.readline = lambda: self.buffer.readline().decode("ascii")
 
-
+# Replacing standard input and output for fast I/O
 sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
-input = lambda: sys.stdin.readline().rstrip('\r\n')
 
-
-
-def I():
-    return input()
-
+def input(): return sys.stdin.readline().strip()
 
 def II():
     return int(input())
 
-
 def MI():
     return map(int, input().split())
 
-
 def LI():
-    return list(input().split())
-
-
-def LII():
     return list(map(int, input().split()))
 
+def SI():
+    return set(map(int, input().split()))
 
 def GMI():
     return map(lambda x: int(x) - 1, input().split())
 
-
 def LGMI():
     return list(map(lambda x: int(x) - 1, input().split()))
 
+def YESNO(cond):
+    print("YES" if cond else "NO")
+
+def FACTORIAL(n):
+    return math.factorial(n)
+
+def GCD(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+
+def LCM(a, b):
+    return a * b // GCD(a, b)
+
+
+# A. Preparing for the Olympiad
+if __name__ == "__main__":
+    t = II()
+    for _ in range(t):
+        sz = II()
+        m = LI()
+        s = LI()
+        s.append(0)
+        df = 0
+        for i in range(sz):
+            if m[i] > s[i+1]:
+                df += m[i] - s[i+1]
+
+        print(df) 
 
     
-
-
-n = II()
-arr = LII()
-mn = float("inf")
-for val in arr:
-    if val == 0:
-        mn = 0
-        break
-    else:
-        mn = min(abs(val),mn)
-
-print(mn)

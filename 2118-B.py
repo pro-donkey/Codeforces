@@ -95,34 +95,12 @@ def LGMI():
     return list(map(lambda x: int(x) - 1, input().split()))
 
 
-def range_mod_sum(d, L, R):
-    """Sum of d % m for m in [L, R], with L >= 1."""
-    total = 0
-
-    # Part 1: m > d, so d % m == d
-    lo = max(L, d + 1)
-    if lo <= R:
-        total += (R - lo + 1) * d
-
-    # Part 2: m <= d, walk quotient blocks
-    hi = min(R, d)
-    l = L
-    while l <= hi:
-        q = d // l
-        r = min(d // q, hi)            # last m with the same quotient
-        cnt = r - l + 1
-        total += cnt * d - q * ((l + r) * cnt // 2)
-        l = r + 1
-    return total
-
 def solve():
-    x, y, k = MI()
-    if y < x:
-        print(k * y + k * (k - 1) // 2)
-    else:
-        d = y - x
-        print(range_mod_sum(d, x, x + k - 1))
-
+    arr = LII()
+    arr.sort()
+    arr = [-1 * x for x in arr]
+    arr[-1] = -1 * arr[-1]
+    print(sum(arr))
 
 
 t = II()
