@@ -1,0 +1,1 @@
+{"name":"Local: 2275-A","url":"d:\\Competative Programming\\Codeforeces\\2275-A.py","tests":[{"id":1791463394426,"input":"3\n0 0 1\n5 5 5\n10 10 13\n","output":""},{"id":1791463590388,"input":"1\n7 6 5","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Competative Programming\\Codeforeces\\2275-A.py","group":"local","local":true}
