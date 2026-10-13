@@ -1,0 +1,1 @@
+{"name":"Local: 1525-B","url":"d:\\Competative Programming\\Codeforeces\\1525-B.py","tests":[{"id":1791785890200,"input":"3\n4\n1 3 2 4\n3\n1 2 3\n5\n2 1 4 5 3\n","output":"1\n0\n2\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Competative Programming\\Codeforeces\\1525-B.py","group":"local","local":true}
