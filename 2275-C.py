@@ -98,18 +98,21 @@ def LGMI():
 def solve():
     n = II()
     arr = LII()
-    i = 2
-    mp = {}
-    while i < n - 2:
-        pair = arr[i] + arr[i-2] - arr[i + 2]
-        if pair in mp:
-            mp[pair] += 1
-        else:
-            mp[pair] = 1
-
-        i += 1
-    mx = max(mp.values())
-    print(mx)
+    pairs = {}
+    ans = 0
+    b = []
+    
+    for i in range(n - 4):
+        sm = arr[i] + arr[i+2] - arr[i+4]
+        b.append(sm)
+        ans += pairs.get(sm, 0)
+        if i >= 2 and b[i - 2] == sm:
+            ans -= 1
+        if i >= 4 and b[i - 4] == sm:
+            ans -= 1
+        pairs[sm] = pairs.get(sm, 0) + 1
+        
+    print(ans)
 
 
 t = II()

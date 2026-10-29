@@ -1,0 +1,1 @@
+{"name":"Local: 2035-B","url":"d:\\Programming\\Codeforeces\\2035-B.py","tests":[{"id":1793193241307,"input":"6\n1\n2\n3\n4\n5\n7\n","output":"-1\n66\n-1\n3366\n36366\n3636666\n"},{"id":1793193461352,"input":"1\n6","output":"336666"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programming\\Codeforeces\\2035-B.py","group":"local","local":true}
