@@ -1,0 +1,1 @@
+{"name":"Local: 2278-B","url":"d:\\Programming\\Codeforeces\\2278-B.py","tests":[{"id":1793460675625,"input":"2\n0 0 3\n1 1 2\n","output":"sss\nssss"},{"id":1793460729590,"input":"1\n7 7 7","output":"rrrrrrrrrrrrrrrrrrrrr"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programming\\Codeforeces\\2278-B.py","group":"local","local":true}
