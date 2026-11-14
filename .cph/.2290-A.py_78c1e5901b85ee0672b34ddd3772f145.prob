@@ -1,0 +1,1 @@
+{"name":"Local: 2290-A","url":"d:\\Programming\\Codeforeces\\2290-A.py","tests":[{"id":1794494271025,"input":"6\n1 2 3\n2 2 2\n3 4 5\n1 1 4\n8 9 10\n3 5 7\n","output":"YES\nNO\nYES\nNO\nYES\nNO\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programming\\Codeforeces\\2290-A.py","group":"local","local":true}
